@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About｜オカルトかーちゃん</title>
+  <meta name="description" content="オカルトかーちゃんの紹介ページ。理念やプロフィール、活動内容について。">
+  <style>
+    /* ====== Base ====== */
+    :root{
+      --ink:#f0f0f5; --muted:#cbd3e6; --accent:#c6a6ff;
+      --navy:rgba(10,15,45,.70); --border:rgba(255,255,255,.12);
+      --card:rgba(12,18,40,.5);
+    }
+    html{ scroll-behavior:smooth }
+    body{
+      margin:0; font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      color:var(--ink); min-height:100vh; position:relative;
+      background:url("./assets/bg-watercolor.png") no-repeat center center / cover fixed;
+    }
+    body::before{ content:""; position:fixed; inset:0; background:rgba(10,15,45,.65); z-index:-1; }
+
+    /* ====== Header ====== */
+    header{ position:sticky; top:0; z-index:20; background:var(--navy); backdrop-filter: blur(6px); border-bottom:1px solid var(--border); }
+    .navwrap{
+      max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; position:relative;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight:700; }
+    .brand img{ height:22px; width:22px; object-fit:contain }
+    nav a{ color:var(--ink); text-decoration:none; margin:0 12px; }
+    nav a:hover{ color:var(--accent) }
+    .btn-sns{ cursor:pointer; }
+
+  
+    /* ====== Main ====== */
+    main{ max-width:1200px; margin:0 auto; padding:30px 20px 56px; }
+
+    /* Hero (アイコン＋一言) */
+    .hero{
+      display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+    }
+    .hero-text h1{ font-size:4rem; margin:0 0 10px; }
+    .hero-text p{ font-size:0.95rem; line-height:1.9; color:var(--muted); margin:0; }
+    .hero-visual{ display:flex; justify-content:flex-end; }
+    .hero-visual img{ max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.55); object-fit:cover; }
+
+    /* ====== ABOUT 見出し（Oを画像で） ====== */
+    .about-heading{
+      display:flex; align-items:center; justify-content:flex-start;
+      font-weight:800; line-height:1; letter-spacing:.05em;
+    }
+    .about-heading .o-img{
+      /* 少し大きめでシンボリックに */
+      height:1.2em; width:1.2em;
+      object-fit:cover; border-radius:50%; /* 丸く切り抜く */
+      vertical-align:middle;
+      margin:0 -0.12em;                   /* 文字に食い込ませる */
+      position:relative; top:.02em; z-index:2; /* 前面に */
+    }
+
+    /* ギャラリー */
+    .tile-gallery img{
+      width:100%; height:auto; border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,.35); object-fit:cover;
+    }
+
+    /* スマホは縦に並べる */
+    @media(max-width:768px){
+      .tile-gallery{ grid-template-columns:1fr; max-width:260px; margin:0 auto; }
+    }
+
+    /* Sections */
+    .section{ margin-top:36px; }
+    .section h2{ font-size:1.1rem; margin:0 0 10px; }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px 20px;
+      box-shadow:0 10px 24px rgba(0,0,0,.28);
+    }
+    .lead{ color:#dce2f2; }
+    .list{ margin:10px 0 0; padding:0 0 0 18px; color:#d6dcf0; }
+    .list li{ margin:6px 0 }
+
+    /* Footer */
+    footer{ border-top:1px solid var(--border); color:#aeb6c9; padding:16px 20px; font-size:0.6rem; }
+    .footwrap{ max-width:1200px; margin:0 auto; display:flex; justify-content:flex-end; gap:20px; flex-wrap:wrap; }
+    footer a{ color:#aeb6c9; text-decoration:none } footer a:hover{ color:var(--accent) }
+
+    /* ====== Responsive ====== */
+    @media (max-width:1024px){
+      .hero{ gap:24px; }
+      .hero-text h1{ font-size:3rem; } /* モバイル寄りでも見出し感を維持 */
+      .hero-visual img{ max-width:90%; }
+    }
+    @media (max-width:768px){
+      .hero{ grid-template-columns:1fr; text-align:center; }
+      .hero-visual{ justify-content:center; }
+      .hero-visual img{ max-width:82%; }
+      nav a{ margin:0 8px; }
+      .about-heading{ justify-content:center; }
+    }
+
+    /* ブランドリンク（左上） */
+    .brand-link{
+      display:flex; align-items:center; gap:10px;
+      color:var(--ink); text-decoration:none;
+    }
+    .brand-link:hover .brand-name{ color:var(--accent); }
+
+    /* アイコンを丸く切り抜いて表示（元画像が四角でもOK）*/
+    .avatar{
+      width:26px; height:26px; border-radius:50%; overflow:hidden;
+      box-shadow:0 0 0 2px rgba(255,255,255,.15);
+      background:#0c1228; flex:0 0 auto;
+    }
+    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .brand-name{ font-weight:700; color:#fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navwrap">
+      <div class="brand">
+        <a class="brand-link" href="index.html" aria-label="ホームへ戻る">
+          <span class="avatar">
+            <img src="./assets/icon.png" alt="オカルトかーちゃんのアイコン">
+          </span>
+          <span class="brand-name">オカルトかーちゃん</span>
+        </a>
+      </div>
+
+      <nav aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="faq.html">FAQ</a>
+	<a href="contact.html">Contact</a>
+        <a href="https://form.jotform.com/252691871500457" target="_blank" rel="noopener noreferrer">ご予約</a>
+      </nav>
+
+    
+    </div>
+  </header>
+
+  <main>
+    <!-- ① アイコン＋短い自己紹介 -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1 class="about-heading">
+          AB<img class="o-img" src="./assets/anahata.png" alt="O">UT
+        </h1>
+        <p class="lead">
+          はじめまして<br>オカルトかーちゃんです<br>
+          その時のテーマに沿った存在からのメッセージを<br>
+          チャネリングで受け取り<br>
+          オラクルカードのヒントを交え<br>
+          ペンデュラムで具体性を高めて言葉にします
+        </p>
+      </div>
+      
+    </section>
+
+    <!-- ② 理念（わたしの想い） -->
+    <section class="section">
+      <div class="card">
+        <h2>わたしの想い</h2>
+        <p class="lead">
+          神秘的な伝説が残る青森・新郷村で生まれ<br>
+          幼いころから日々の不思議やご先祖さまの気配を身近に感じて過ごしてきました<br>
+          自分の人生が半分を過ぎた今ふり返ると、スピリチュアルなことは常に隣にあったなぁと感じています<br>
+          <br>
+          深い理屈よりも、“神秘的なことっておもしろい”という気持ちに導かれ<br>
+          オカルトに親しんできたことが原点となり<br>
+          2024年に「オカルトかーちゃん」として発信を始めました<br>
+          <br>
+          組織の中で働いていると<br>
+          一人の力にはどうしても限界があると感じるときがあります<br>
+          けれども、同じ思いを持つ人が増えていけば、できないと思っていたことが少しずつ動きだすんですよね<br>
+          <br>
+          だからこそ「世の中を少しでも生きやすくしたい」と願う人が増えたら、未来はきっと良い方向へ変わっていく<br>
+          その願いを持つ方に寄り添い、わたしができることで力を添えたいと考えていました<br>
+          <br>
+          そんなときにチャネリングと出会い、「これなら人の役に立てる」と心から思いました<br>
+          <br>
+          セッションを通じて、見えない世界のサインをあなたと一緒に受け取り<br>
+          日常の迷いや不安を気づきへ変える<br>
+          <br>
+          安心感の中で、あなたが自分らしく選択できるよう、そのお手伝いをすることが、わたしの役目です<br>
+          <br>
+          未来を良くも悪くも決めつけることではなく、あなたが幸せに向かって立ち上がれること<br>
+          そして、あなたの信じる未来にフォーカスして行動できるよう願っています<br>
+        </p>
+      </div>
+    </section>
+
+    <!-- ③ 提供内容（サービスの形） -->
+    <section class="section">
+      <div class="card">
+        <h2>できること</h2>
+        <ul class="list">
+          <li>チャネリングで、その時のテーマに沿ったメッセージを受け取る</li>
+          <li>オラクルカードで多角的な視点をプラス</li>
+          <li>ペンデュラムで具体性を高め、実生活に活かせる言葉としてお伝えする</li>
+          <li>セッション後に振り返りシートをお渡ししています</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ④ 人となり（＋α） -->
+    <section class="section">
+      <div class="card">
+        <h2>人となり</h2>
+        <p class="lead">
+          二児の母として日常を楽しみながら、<br>
+          「かーちゃん目線のあたたかさ」と「神秘的な感性」の両方を大切にしています<br>
+          忘れっぽいので乗っていった自転車を忘れて帰ってくるタイプです<br>
+          普段はサラリーマンで、スピリチュアルやオカルトとは畑違いな仕事をしています<br>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer>
+    <div class="footwrap">
+<a href="index.html">Home</a>
+      <span><a href="about.html">About</a></span>
+      <span><a href="menu.html">Menu</a></span>
+      <span><a href="contact.html">Contact</a></span>
+      <span><a href="othe.html#policy">Peivacy Policy & Terms Of Use</a></span>
+	<span><a href="othe.html#tokutei">特定商取引法に基づく表記</a></span>
+      <span>© 2025 Copyrights by オカルトかーちゃんラボ All Rights Reserved.</span>
+
+    </div>
+  </footer>
+
+</body>
+</html>

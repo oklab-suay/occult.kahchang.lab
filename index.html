@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>オカルトかーちゃん</title>
+  <meta name="description" content="迷ったら、かーちゃんに聞いてみよ。チャネリング、オラクルカード、ペンデュラムでその時のテーマに沿った存在からのメッセージを届けます。">
+  <style>
+    /* ====== Base ====== */
+    :root{
+      --ink:#f0f0f5; --muted:#bfc7d9; --accent:#c6a6ff;
+      --navy:rgba(10,15,45,.70); --border:rgba(255,255,255,.12);
+      --header-h: 56px;  /* ← 追加：ヘッダーの高さ */
+    }
+    html{ scroll-behavior:smooth }
+    body{
+      margin:0; font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      color:var(--ink); min-height:100vh; position:relative;
+      background:url("./assets/bg-watercolor.png") no-repeat center center / cover fixed;
+      padding-top: var(--header-h);  /* ← 追加：本文をヘッダー分押し下げる */
+    }
+    body::before{ content:""; position:fixed; inset:0; background:rgba(10,15,45,.65); z-index:-1; }
+
+    /* ====== Header ====== */
+
+header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: var(--navy);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+    .navwrap{
+      max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; position:relative;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight:700; }
+    .brand img{ height:22px; width:22px; object-fit:contain }
+    nav a{ color:var(--ink); text-decoration:none; margin:0 12px; }
+    nav a:hover{ color:var(--accent) }
+    .btn-sns{ cursor:pointer; }
+
+
+    /* ====== Hero ====== */
+    .hero{
+      max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between;
+      padding:30px 20px; gap:40px;
+    }
+    .hero-text{ flex:1; min-width:280px; }
+    .hero-text h1{ font-size:1.3rem; line-height:1.35; margin:0 0 14px; }
+    .hero-text p{ font-size:0.9rem; line-height:1.8; color:#cfd6e6; margin:0; }
+    .hero-visual{ flex:1; min-width:280px; display:flex; justify-content:flex-end; }
+    .hero-visual img{ max-width:100%; height:auto; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.55); object-fit:cover; }
+
+    /* ====== Footer ====== */
+    footer{ border-top:1px solid var(--border); color:#aeb6c9; padding:16px 20px; font-size:0.6rem; }
+    .footwrap{ max-width:1200px; margin:0 auto; display:flex; justify-content:flex-end; gap:20px; flex-wrap:wrap; }
+    footer a{ color:#aeb6c9; text-decoration:none } footer a:hover{ color:var(--accent) }
+    @media (max-width:768px){ .footwrap{ flex-direction:column; align-items:flex-end; gap:6px; } }
+
+    /* ====== Responsive ====== */
+    @media (max-width:1024px){
+      .hero{ gap:24px; padding:64px 20px; }
+      .hero-text h1{ font-size:1.2rem; }
+      .hero-visual img{ max-width:90%; }
+    }
+    @media (max-width:768px){
+      .hero{ flex-direction:column; text-align:center; }
+      .hero-text{ max-width:720px; }
+      .hero-text h1{ font-size:1rem; }
+      .hero-visual{ justify-content:center; }
+      .hero-visual img{ max-width:82%; }
+      nav a{ margin:0 8px; }
+    }
+  
+/* ブランドリンク（左上） */
+.brand-link{
+  display:flex; align-items:center; gap:10px;
+  color:var(--ink); text-decoration:none;
+}
+.brand-link:hover .brand-name{ color:var(--accent); }
+
+/* アイコンを丸く切り抜いて表示（元画像が四角でもOK）*/
+.avatar{
+  width:26px; height:26px; border-radius:50%; overflow:hidden;
+  box-shadow:0 0 0 2px rgba(255,255,255,.15);
+  background:#0c1228;                 /* 画像読み込み前の下地 */
+  flex:0 0 auto;
+}
+.avatar img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.brand-name{ font-weight:700; color:#fff; }
+
+　　</style>
+</head>
+
+<body>
+  <!-- ====== Header ====== -->
+  <header>
+    <div class="navwrap">
+    <div class="brand">
+      <a class="brand-link" href="index.html" aria-label="ホームへ戻る">
+        <span class="avatar">
+          <img src="./assets/icon.png" alt="オカルトかーちゃんのアイコン">
+        </span>
+        <span class="brand-name">オカルトかーちゃん</span>
+      </a>
+    </div>
+      <nav aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="faq.html">FAQ</a>
+	<a href="contact.html">Contact</a>
+        <a href="https://form.jotform.com/252691871500457" target="_blank" rel="noopener noreferrer">ご予約</a>
+      </nav>
+
+
+    </div>
+  </header>
+
+  <!-- ====== Hero ====== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>迷ったら、かーちゃんに聞いてみよ</h1>
+      
+    </div>
+    <div class="hero-visual">
+      <img src="./assets/women.png" alt="かーちゃんのイメージ">
+    </div>
+  </section>
+
+  <!-- ====== Footer ====== -->
+  <footer>
+    <div class="footwrap">
+<a href="index.html">Home</a>
+      <span><a href="about.html">About</a></span>
+      <span><a href="menu.html">Menu</a></span>
+      <span><a href="contact.html">Contact</a></span>
+      <span><a href="othe.html#policy">Peivacy Policy & Terms Of Use</a></span>
+	<span><a href="othe.html#tokutei">特定商取引法に基づく表記</a></span>
+      <span>© 2025 Copyrights by オカルトかーちゃんラボ All Rights Reserved.</span>
+
+    </div>
+  </footer>
+
+</body>
+</html>
