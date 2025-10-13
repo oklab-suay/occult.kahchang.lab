@@ -5,150 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu｜オカルトかーちゃん</title>
   <meta name="description" content="メニュー・料金のご案内。">
-
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <style>
-    /* ====== Base ====== */
-    :root{
-      --ink:#f0f0f5; --muted:#cbd3e6; --accent:#c6a6ff;
-      --navy:rgba(10,15,45,.70); --border:rgba(255,255,255,.12);
-      --card:rgba(12,18,40,.5);
-      /* 固定ヘッダーの実効高さ（body側の余白とアンカーのオフセットに使用） */
-      --header-h:54px;
-    }
-    /* ← ここに scroll-padding-top を足しました */
-    html{
-      scroll-behavior:smooth;
-      scroll-padding-top:var(--header-h);
-    }
-    body{
-      margin:0; font-family:"Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-      color:var(--ink); min-height:100vh; position:relative;
-      background:url("./assets/bg-watercolor.png") no-repeat center center/cover fixed;
-      /* ヘッダーぶん押し下げ（隠れ防止） */
-      padding-top:var(--header-h);
-    }
-    body::before{content:""; position:fixed; inset:0; background:rgba(10,15,45,.65); z-index:-1;}
-
-    /* ====== Header（固定） ====== */
-    header{
-      position:fixed; top:0; left:0; right:0; z-index:1000;
-      background:var(--navy); backdrop-filter:blur(6px); border-bottom:1px solid var(--border);
-    }
-    .navwrap{max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; position:relative;}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700;}
-    .brand img{height:22px; width:22px; object-fit:contain}
-    nav a{color:var(--ink); text-decoration:none; margin:0 12px;}
-    nav a:hover{color:var(--accent)}
-    .btn-sns{cursor:pointer;}
-
-    /* ====== Main ====== */
-    main{max-width:1200px; margin:0 auto; padding:30px 20px 56px;}
-
-    /* Hero */
-    .hero{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
-    .hero-text h1{font-size:4rem; margin:0 0 10px;}
-    .hero-text p{font-size:0.95rem; line-height:1.9; color:var(--muted); margin:0;}
-
-    /* Chakra Row */
-    .chakra-row{
-      display:grid; grid-template-columns:repeat(7, 1fr); gap:14px;
-      width:100%; max-width:680px; margin-left:auto;
-    }
-    .chakra-row img{
-      width:100%; aspect-ratio:1/1; border-radius:50%;
-      object-fit:cover; background:#fff;
-      box-shadow:0 4px 16px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.15);
-    }
-
-    /* ====== Menu Cards ====== */
-    .menu{margin-top:40px; display:grid; gap:20px; grid-template-columns:repeat(12,1fr);}
-    .menu .card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; box-shadow:0 10px 24px rgba(0,0,0,.28);}
-    .menu .span6{grid-column:span 12;}
-    .menu .span4{grid-column:span 12;}
-    @media(min-width:900px){
-      .menu .span6{grid-column:span 6;}
-      .menu .span4{grid-column:span 4;}
-    }
-    .menu h3{margin:0 0 6px; font-size:1rem; color:#fff;}
-    .meta{display:flex; flex-wrap:wrap; gap:10px; margin:6px 0 10px; font-size:.85rem; color:#cfd6e6;}
-    .pill{display:inline-block; border:1px solid var(--border); border-radius:999px; padding:4px 10px;}
-    .price{color:#fff; font-weight:700;}
-    .desc{color:#d6dcf0; font-size:.92rem; line-height:1.8; margin:6px 0 0;}
-    .cta{margin-top:12px;}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; border:1px solid #c9b9ff; background:#c6a6ff; color:#0d1330; font-weight:700; text-decoration:none;}
-    .btn:hover{filter:brightness(1.05)}
-
-    /* ====== Sections ====== */
-    .section{margin-top:36px;}
-    .section .card{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 20px; box-shadow:0 10px 24px rgba(0,0,0,.28);}
-    .section h2{font-size:1.1rem; margin:0 0 10px; color:#fff;}
-    .list{margin:8px 0 0; padding:0 0 0 18px; color:#d6dcf0;}
-    .list li{margin:6px 0}
-
-    /* Reservation special card (clickable) */
-    .reservation-link{
-      display:block;
-      text-decoration:none;
-      color:inherit;
-    }
-    .reservation-card{
-      border:2px solid var(--accent);
-      text-align:center;
-      padding:24px 20px;
-      margin:40px auto;
-      border-radius:16px;
-      background:rgba(198,166,255,.1);
-      transition:all .3s ease;
-      box-shadow:0 4px 12px rgba(0,0,0,.2);
-      cursor:pointer;
-      max-width:820px;
-    }
-    .reservation-card h2{margin:0 0 6px; color:var(--accent); font-size:1.25rem;}
-    .reservation-card p{margin:0; color:#d6dcf0; font-size:.95rem;}
-    .reservation-link:hover .reservation-card{
-      background:var(--accent);
-      border-color:transparent;
-      color:#fff;
-      transform:translateY(-3px);
-      box-shadow:0 8px 20px rgba(0,0,0,.35);
-    }
-    .reservation-link:hover .reservation-card h2,
-    .reservation-link:hover .reservation-card p{color:#fff;}
-
-    /* Footer */
-    footer{border-top:1px solid var(--border); color:#aeb6c9; padding:16px 20px; font-size:0.6rem;}
-    .footwrap{max-width:1200px; margin:0 auto; display:flex; justify-content:flex-end; gap:20px; flex-wrap:wrap;}
-    footer a{color:#aeb6c9; text-decoration:none} footer a:hover{color:var(--accent)}
-
-    /* ====== Responsive ====== */
-    @media (max-width:1024px){
-      .hero{gap:24px;}
-      .hero-text h1{font-size:1.25rem;}
-      .chakra-row{max-width:560px;}
-    }
-    @media (max-width:768px){
-      .hero{grid-template-columns:1fr; text-align:center;}
-      .chakra-row{margin:0 auto;}
-      nav a{margin:0 8px;}
-    }
-
-    /* Brand */
-    .brand-link{display:flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none;}
-    .brand-link:hover .brand-name{color:var(--accent);}
-    .avatar{width:26px; height:26px; border-radius:50%; overflow:hidden; box-shadow:0 0 0 2px rgba(255,255,255,.15); background:#0c1228; flex:0 0 auto;}
-    .avatar img{width:100%; height:100%; object-fit:cover; display:block;}
-    .brand-name{font-weight:700; color:#fff;}
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
 <body>
   <header>
     <div class="navwrap">
       <div class="brand">
         <a class="brand-link" href="index.html" aria-label="ホームへ戻る">
-          <span class="avatar"><img src="./assets/icon.png" alt="オカルトかーちゃんのアイコン"></span>
+          <span class="avatar"><img src="assets/icon.png" alt="オカルトかーちゃんのアイコン"></span>
           <span class="brand-name">オカルトかーちゃん</span>
         </a>
       </div>
@@ -172,13 +37,13 @@
       </div>
       <div class="hero-visual">
         <div class="chakra-row">
-          <img src="./assets/sahas.png" alt="sahas">
-          <img src="./assets/agu.png" alt="agu">
-          <img src="./assets/vish.png" alt="vish">
-          <img src="./assets/anahata1.png" alt="anahata">
-          <img src="./assets/mani.png" alt="mani">
-          <img src="./assets/swa.png" alt="swa">
-          <img src="./assets/mura.png" alt="mura">
+          <img src="assets/sahas.png" alt="sahas">
+          <img src="assets/agu.png" alt="agu">
+          <img src="assets/vish.png" alt="vish">
+          <img src="assets/anahata1.png" alt="anahata">
+          <img src="assets/mani.png" alt="mani">
+          <img src="assets/swa.png" alt="swa">
+          <img src="assets/mura.png" alt="mura">
         </div>
       </div>
     </section>
@@ -196,8 +61,11 @@
     <section class="menu">
       <article class="card span6">
         <h3>チャネリングセッション 60分</h3>
-        <div class="meta"><span class="pill">対面(東京都千代田区神保町周辺) / オンライン</span>
-        <span class="pill">録音OK</span><span class="pill">振り返りシート</span></div>
+        <div class="meta">
+          <span class="pill">対面(東京都千代田区神保町周辺) / オンライン</span>
+          <span class="pill">録音OK</span>
+          <span class="pill">振り返りシート</span>
+        </div>
         <div class="price">¥9,900（税込）</div>
         <p class="desc">導入10-15分、チャネリングと深堀り30分-40分、まとめ10-15分<br>セッション後に振り返りシートをお渡ししています</p>
         <div class="cta"><a class="btn" href="https://STORES_SHOP_URL_HERE" target="_blank" rel="noopener">Coming Soon/予約・決済</a></div>
@@ -205,7 +73,10 @@
 
       <article class="card span6">
         <h3>チャネリングセッション 30分</h3>
-        <div class="meta"><span class="pill">オンライン推奨</span><span class="pill">短時間で要点</span></div>
+        <div class="meta">
+          <span class="pill">オンライン推奨</span>
+          <span class="pill">短時間で要点</span>
+        </div>
         <div class="price">¥5,500（税込）</div>
         <p class="desc">ポイントを絞った具体的なテーマがあるとき<br>限られた時間で素早く言葉にします</p>
         <div class="cta"><a class="btn" href="https://STORES_SHOP_URL_HERE" target="_blank" rel="noopener">Coming Soon/予約・決済</a></div>
@@ -213,8 +84,11 @@
 
       <article class="card span6">
         <h3>かーちゃん相談＋チャネリング 90分</h3>
-        <div class="meta"><span class="pill">対面(東京都千代田区神保町周辺) / オンライン</span>
-        <span class="pill">録音OK</span><span class="pill">振り返りシート</span></div>
+        <div class="meta">
+          <span class="pill">対面(東京都千代田区神保町周辺) / オンライン</span>
+          <span class="pill">録音OK</span>
+          <span class="pill">振り返りシート</span>
+        </div>
         <div class="price">¥15,400（税込）</div>
         <p class="desc">導入10-15分、チャネリングと深堀り50分-60分、まとめ10-15分<br>セッション後に振り返りシートをお渡ししています</p>
         <div class="cta"><a class="btn" href="https://STORES_SHOP_URL_HERE" target="_blank" rel="noopener">Coming Soon/予約・決済</a></div>
@@ -222,7 +96,10 @@
 
       <article class="card span6">
         <h3>リピーター限定：LINEセッション</h3>
-        <div class="meta"><span class="pill">LINE</span><span class="pill">ひとつの質問</span></div>
+        <div class="meta">
+          <span class="pill">LINE</span>
+          <span class="pill">ひとつの質問</span>
+        </div>
         <div class="price">¥2,200（税込）</div>
         <p class="desc">リピーターの方限定で、今すぐ聞きたいことを送ってください<br>ひとつの質問につき、24時間以内に要点を簡潔にまとめて返信します</p>
         <div class="cta"><a class="btn" rel="noopener">初回セッションでご説明</a></div>
@@ -250,12 +127,10 @@
       <span><a href="about.html">About</a></span>
       <span><a href="menu.html">Menu</a></span>
       <span><a href="contact.html">Contact</a></span>
-      <!-- 表記の誤字 “Peivacy”→“Privacy” はリンク文字だけ直しました。URLはそのままです -->
-      <span><a href="othe.html#policy">Privacy Policy & Terms Of Use</a></span>
+      <span><a href="othe.html#policy">Privacy Policy &amp; Terms Of Use</a></span>
       <span><a href="othe.html#tokutei">特定商取引法に基づく表記</a></span>
       <span>© 2025 Copyrights by オカルトかーちゃんラボ All Rights Reserved.</span>
     </div>
   </footer>
-
 </body>
 </html>

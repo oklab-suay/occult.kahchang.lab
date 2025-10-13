@@ -5,67 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact｜オカルトかーちゃん</title>
   <meta name="description" content="お問い合わせフォーム。ご質問やご相談はこちらから。">
-
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <style>
-    :root{
-      --ink:#f0f0f5; --muted:#bfc7d9; --accent:#c6a6ff;
-      --navy:rgba(10,15,45,.70); --border:rgba(255,255,255,.12);
-      --header-h:56px;
-    }
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family:"Noto Sans JP",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-      color:var(--ink); min-height:100vh; position:relative;
-      background:url("./assets/bg-watercolor.png") center/cover fixed no-repeat;
-      padding-top:var(--header-h);
-    }
-    body::before{content:"";position:fixed;inset:0;background:rgba(10,15,45,.65);z-index:-1}
-
-    /* Header */
-    header{
-      position:fixed;top:0;left:0;right:0;z-index:1000;
-      background:var(--navy);backdrop-filter:blur(6px);
-      border-bottom:1px solid var(--border);
-    }
-    .navwrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
-    nav a{color:var(--ink);text-decoration:none;margin:0 12px}
-    nav a:hover{color:var(--accent)}
-    .brand-link{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
-    .brand-link:hover .brand-name{color:var(--accent)}
-    .avatar{width:26px;height:26px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px rgba(255,255,255,.15);background:#0c1228;flex:0 0 auto}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .brand-name{font-weight:700;color:#fff}
-
-    /* Hero */
-    .hero{max-width:1200px;margin:0 auto;padding:20px 20px 24px}
-    .hero h1{font-size:4rem;margin:0 0 8px}
-    .hero p{margin:0;color:#cfd6e6}
-
-    /* Contact block */
-    .contact-form{max-width:1200px;margin:0 auto;padding:0 20px 56px}
-    /*　.embed{background:rgba(12,18,40,.5);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.28)}　*/
-    #jotform-embed{width:100%;min-height:520px;border:0;display:block}
-
-    /* Footer */
-    footer{border-top:1px solid var(--border);color:#aeb6c9;padding:16px 20px;font-size:.6rem}
-    .footwrap{max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;gap:20px;flex-wrap:wrap}
-    footer a{color:#aeb6c9;text-decoration:none}
-    footer a:hover{color:#c6a6ff}
-
-    @media(max-width:768px){
-      .hero{padding:40px 20px 16px}
-    }
-  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header>
     <div class="navwrap">
-      <a class="brand-link" href="index.html" aria-label="ホームへ戻る">
-        <span class="avatar"><img src="./assets/icon.png" alt="オカルトかーちゃんのアイコン"></span>
-        <span class="brand-name">オカルトかーちゃん</span>
-      </a>
+      <div class="brand">
+        <a class="brand-link" href="index.html" aria-label="ホームへ戻る">
+          <span class="avatar"><img src="assets/icon.png" alt="オカルトかーちゃんのアイコン"></span>
+          <span class="brand-name">オカルトかーちゃん</span>
+        </a>
+      </div>
       <nav aria-label="Main">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -77,25 +28,29 @@
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Contact</h1>
-    <p>セッションに関するご質問やご相談はこちらからどうぞ</p>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Contact</h1>
+        <p>セッションに関するご質問やご相談はこちらからどうぞ。</p>
+      </div>
+    </section>
 
-  <section class="contact-form">
-    <div class="embed">
-      <!-- ▼ Jotform：iframe埋め込み（オートリサイズ対応） -->
-      <iframe
-        title="お問い合わせフォーム"
-        id="jotform-embed"
-        src="https://form.jotform.com/252687830106459"
-        scrolling="no"
-      ></iframe>
-    </div>
-    <p style="color:#cfd6e6;font-size:.85rem;margin-top:10px">
-      <!-- 　※ 日程調整フォームは STORES 購入後の自動返信メールにてご案内します -->
-    </p>
-  </section>
+    <section class="section">
+      <div class="card">
+        <iframe
+          id="jotform-embed"
+          title="お問い合わせフォーム"
+          src="https://form.jotform.com/252687830106459"
+          scrolling="no"
+          style="width:100%;min-height:520px;border:0;display:block;"
+        ></iframe>
+      </div>
+      <p style="color:#cfd6e6;font-size:.85rem;margin-top:10px;">
+        ※日程調整フォームは STORES 購入後の自動返信メールにてご案内します。
+      </p>
+    </section>
+  </main>
 
   <footer>
     <div class="footwrap">
@@ -103,21 +58,19 @@
       <span><a href="about.html">About</a></span>
       <span><a href="menu.html">Menu</a></span>
       <span><a href="contact.html">Contact</a></span>
-      <span><a href="othe.html#policy">Privacy Policy &amp; Terms Of Use</a></span>
-	<span><a href="othe.html#tokutei">特定商取引法に基づく表記</a></span>
+      <span><a href="othe.html#policy">Privacy Policy & Terms Of Use</a></span>
+      <span><a href="othe.html#tokutei">特定商取引法に基づく表記</a></span>
       <span>© 2025 Copyrights by オカルトかーちゃんラボ All Rights Reserved.</span>
     </div>
   </footer>
 
-  <!-- ▼ 高さオートリサイズ（Jotform公式postMessageに対応） -->
   <script>
     (function(){
-      var ifr = document.getElementById('jotform-embed');
+      const ifr = document.getElementById('jotform-embed');
       function onMsg(e){
         if(!e || !e.data || typeof e.data !== 'string') return;
-        // Jotformからの "setHeight:1234:..." 形式に対応
         if(e.data.indexOf('setHeight') === 0){
-          var h = parseInt(e.data.split(':')[1],10);
+          const h = parseInt(e.data.split(':')[1],10);
           if(h && h > 0) ifr.style.height = (h + 30) + 'px';
         }
       }
