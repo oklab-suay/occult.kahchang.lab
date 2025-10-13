@@ -96,31 +96,19 @@
 
 /* ===== スマホでの動画トリミングと高さ調整 ===== */
 @media (max-width: 768px) {
-  .hero-video {
-    height: 100vh; /* 縦いっぱい */
-  }
-
-  .hero-video video {
-    object-fit: cover;
-    object-position: center center; /* 中心を基準に切り取る */
-    min-height: 100vh;
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero-content {
-    padding: 0 16px;
-  }
-
-  .hero-content h1 {
-    font-size: 1.2rem;
-    line-height: 1.4;
-  }
-
-  .hero-content p {
-    font-size: 0.9rem;
-  }
+.hero-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* ← cover から contain に変更 */
+  object-position: center center; /* 中央寄せ */
+  z-index: -1;
+  background-color: #000;    /* 黒背景を残す（上下の帯用） */
+  filter: brightness(0.65);  /* 暗めにして文字が読みやすいように */
 }
+
 
   </style>
 </head>
