@@ -82,16 +82,10 @@
     @media (max-width: 768px) {
       .hero-video {
         height: 90vh;
-        background-size: cover;            /* 余白なし */
-        background-position: left center;  /* 顔側を優先（※ leftcenter は誤り） */
+        background-size: contain;            /* 余白あり */
       }
     }
 
-    @media (max-width: 375px) {
-      .hero-center-copy h1 {
-        font-size: 1.0rem; /* 小さめ端末用（0.7remは小さすぎになりやすい） */
-      }
-    }
   </style>
 </head>
 
@@ -141,3 +135,4 @@
 
 </body>
 </html>
+
