@@ -9,12 +9,19 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <style>
-    /* ====== 動画背景エリア ====== */
+    /* ====== Hero（静止画背景） ====== */
     .hero-video {
       position: relative;
       height: 100vh;
       width: 100%;
       overflow: hidden;
+
+      background-image: url("assets/women.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -22,43 +29,7 @@
       color: #fff;
     }
 
-    .hero-video video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(0.65);
-    }
-
-    /* ====== テキスト（中央配置） ====== */
-    .hero-content {
-      z-index: 10;
-      max-width: 800px;
-      padding: 0 20px;
-      animation: fadeIn 1.8s ease 0.4s both;
-    }
-
-    .hero-content h1 {
-      font-size: clamp(1.5rem, 3vw + 1rem, 2.6rem);
-      line-height: 1.4;
-      margin: 0 0 16px;
-    }
-
-    .hero-content p {
-      font-size: clamp(0.9rem, 2vw, 1.2rem);
-      color: #e0e5ff;
-      margin: 0;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ====== スクロール時にヘッダーを前面に固定 ====== */
+    /* ====== ヘッダー固定 ====== */
     header {
       position: fixed;
       top: 0;
@@ -84,36 +55,39 @@
       font-size: 0.6rem;
     }
 
-    /* モバイル対応 */
+    /* ====== 画面中央に固定するテキスト ====== */
+    .fixed-center-copy{
+      position: fixed;
+      top: calc(50% + (var(--header-h) / 2));
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 900;
+
+      width: min(900px, 92vw);
+      text-align: center;
+      pointer-events: none;
+      padding: 0 16px;
+    }
+
+    .fixed-center-copy h1{
+      margin: 0;
+      font-size: clamp(1.4rem, 3vw + 0.8rem, 3rem);
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 6px 18px rgba(0,0,0,.55);
+    }
+
+    /* ====== モバイル調整 ====== */
     @media (max-width: 768px) {
       .hero-video {
         height: 90vh;
       }
-      .hero-content h1 {
-        font-size: 1.4rem;
-      }
     }
-
-/* ===== スマホでの動画トリミングと高さ調整 ===== */
-@media (max-width: 768px) {
-.hero-video video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;       /* ← cover から contain に変更 */
-  object-position: center center; /* 中央寄せ */
-  z-index: -1;
-  background-color: #000;    /* 黒背景を残す（上下の帯用） */
-  filter: brightness(0.65);  /* 暗めにして文字が読みやすいように */
-}
-
-
   </style>
 </head>
 
 <body>
+
   <!-- ====== Header ====== -->
   <header>
     <div class="navwrap">
@@ -131,21 +105,18 @@
         <a href="menu.html">Menu</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
-        <a href="https://form.jotform.com/252691871500457" target="_blank" rel="noopener noreferrer">ご予約</a>
+        <!--<a href="https://form.jotform.com/252691871500457" target="_blank" rel="noopener noreferrer">--> ご予約</a>
       </nav>
     </div>
   </header>
 
-  <!-- ====== Hero with Video ====== -->
-  <section class="hero-video">
-    <video autoplay muted playsinline>
-  <source src="assets/banner.mp4" type="video/mp4" />
-  お使いのブラウザは動画をサポートしていません。
-</video>
+  <!-- ====== 中央固定コピー ====== -->
+  <div class="fixed-center-copy" aria-label="キャッチコピー">
+    <h1>迷ったら、かーちゃんに聞いてみよ</h1>
+  </div>
 
-
-    
-  </section>
+  <!-- ====== Hero ====== -->
+  <section class="hero-video"></section>
 
   <!-- ====== Footer ====== -->
   <footer>
@@ -159,5 +130,6 @@
       <span>© 2025 Copyrights by オカルトかーちゃんラボ All Rights Reserved.</span>
     </div>
   </footer>
+
 </body>
 </html>
