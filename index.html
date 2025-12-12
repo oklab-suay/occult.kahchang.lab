@@ -55,27 +55,29 @@
       font-size: 0.6rem;
     }
 
-    /* ====== 画面中央に固定するテキスト ====== */
-    .fixed-center-copy{
-      position: fixed;
-      top: calc(50% + (var(--header-h) / 2));
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 900;
+/* ====== 画面中央に固定するテキスト ====== */
+.fixed-center-copy{
+  position: fixed;
+  top: calc(50% + (var(--header-h) / 2));
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 900;
 
-      width: min(900px, 92vw);
-      text-align: center;
-      pointer-events: none;
-      padding: 0 16px;
-    }
+  width: min(900px, 92vw);
+  text-align: center;
+  pointer-events: none;
+  padding: 0 16px;
+}
 
-    .fixed-center-copy h1{
-      margin: 0;
-      font-size: clamp(1.4rem, 3vw + 0.8rem, 3rem);
-      line-height: 1.25;
-      color: #fff;
-      text-shadow: 0 6px 18px rgba(0,0,0,.55);
-    }
+.fixed-center-copy h1{
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw + 0.8rem, 3rem);
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 6px 18px rgba(0,0,0,.55);
+  white-space: nowrap; /* ← ここに追加 */
+}
+
 
     /* ====== モバイル調整 ====== */
 /* ====== モバイル調整 ====== */
@@ -83,9 +85,7 @@
   .hero-video {
     height: 90vh;
     background-size: contain;        /* ★ 画像を全部見せる */
-    background-position: center;     /* 中央寄せ */
-    background-repeat: no-repeat;
-    background-color: #000;          /* 余白対策 */
+    background-position: leftcenter;     /* 左寄せ */
   }
 }
 
@@ -139,4 +139,5 @@
 
 </body>
 </html>
+
 
