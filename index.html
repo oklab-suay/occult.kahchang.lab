@@ -78,11 +78,17 @@
     }
 
     /* ====== モバイル調整 ====== */
-    @media (max-width: 768px) {
-      .hero-video {
-        height: 90vh;
-      }
-    }
+/* ====== モバイル調整 ====== */
+@media (max-width: 768px) {
+  .hero-video {
+    height: 90vh;
+    background-size: contain;        /* ★ 画像を全部見せる */
+    background-position: center;     /* 中央寄せ */
+    background-repeat: no-repeat;
+    background-color: #000;          /* 余白対策 */
+  }
+}
+
   </style>
 </head>
 
@@ -133,3 +139,4 @@
 
 </body>
 </html>
+
