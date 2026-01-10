@@ -63,7 +63,7 @@
       transform: translate(-50%, -50%);
       z-index: 10;
 
-      width: min(800px, 92vw);
+      width: min(900px, 92vw);
       text-align: center;
       pointer-events: none;
       padding: 0 16px;
@@ -71,7 +71,7 @@
 
     .hero-center-copy h1{
       margin: 0;
-      font-size: clamp(1.2rem, 3vw + 0.8rem, 3rem);
+      font-size: clamp(1.4rem, 3vw + 0.8rem, 3rem);
       line-height: 1.25;
       color: #fff;
       text-shadow: 0 6px 18px rgba(0,0,0,.55);
@@ -79,13 +79,19 @@
     }
 
     /* ====== モバイル調整 ====== */
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       .hero-video {
         height: 90vh;
-        background-size: contain;            /* 余白あり */
+        background-size: cover;            /* 余白なし */
+        background-position: left center;  /* 顔側を優先（※ leftcenter は誤り） */
       }
     }
 
+    @media (max-width: 375px) {
+      .hero-center-copy h1 {
+        font-size: 1.0rem; /* 小さめ端末用（0.7remは小さすぎになりやすい） */
+      }
+    }
   </style>
 </head>
 
@@ -135,6 +141,3 @@
 
 </body>
 </html>
-
-
-
