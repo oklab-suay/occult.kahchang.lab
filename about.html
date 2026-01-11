@@ -11,31 +11,47 @@
 
 <body>
   <!-- ====== Header ====== -->
-  <header>
-    <div class="navwrap">
-      <div class="brand">
-        <a class="brand-link" href="index.html" aria-label="ホームへ戻る">
-          <span class="avatar">
-            <img src="assets/icon.png" alt="オカルトかーちゃんのアイコン">
-          </span>
-          <span class="brand-name">オカルトかーちゃん</span>
+  <!-- ★ ここに index.html と同じ Header を貼る ★ -->
+  <header class="site-header">
+    <div class="header-wrap">
+
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/icon.png" alt="オカルトかーちゃん アイコン">
+          <span>オカルトかーちゃん</span>
         </a>
       </div>
-      <nav aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Menu</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <!-- <a href="https://form.jotform.com/252691871500457" target="_blank" rel="noopener noreferrer"> -->ご予約</a>
+
+      <input id="nav-toggle" type="checkbox" class="nav-toggle" />
+
+      <label for="nav-toggle" class="hamburger" aria-label="メニューを開く">
+        <img
+          class="hamburger-icon"
+          src="assets/humberger_Image.png"
+          alt="メニュー"
+        >
+      </label>
+
+      <nav class="site-nav" aria-label="メインメニュー">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+<!--<a href="https://form.jotform.com/252691871500457" target="_blank" rel="noopener noreferrer">ご予約</a>-->
+        </ul>
       </nav>
+
     </div>
   </header>
 
 
 
-
   <main>
+  <div class="container">
+    <!-- ここに既存のABOUT本文（h1やp等）を全部入れる -->
+  
     <!-- Hero -->
     <section class="hero">
       <div class="hero-text">
@@ -54,10 +70,10 @@
 <br><br>
 白黒をつけたり、未来を断定したりせず<br>
 「自分で決められる状態」に戻すことを大切にしています。<br>
-<br><br>
+<br>
 見えない世界の話と、現実の生活。<br>
 どちらか一方に寄りすぎると、判断は重くなります。<br>
-<br><br>
+<br>
 会社員として現実を回しながら、<br>
 感覚の世界にも触れてきたからこそ、<br>
 その間を行き来しながら整理する役割ができるのだと思っています。
@@ -104,5 +120,23 @@
         </ul>
       </div>
     </section> -->
+</div>
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer>
+    <div class="footwrap">
+      <a href="index.html">Home</a>
+      <span><a href="about.html">About</a></span>
+      <span><a href="menu.html">Menu</a></span>
+      <span><a href="contact.html">Contact</a></span>
+      <span><a href="othe.html#policy">Privacy Policy &amp; Terms Of Use</a></span>
+      <span><a href="othe.html#tokutei">特定商取引法に基づく表記</a></span>
+      <span>© 2025 Copyrights by オカルトかーちゃんラボ All Rights Reserved.</span>
+    </div>
+  </footer>
+</body>
+</html>
+
 
   
