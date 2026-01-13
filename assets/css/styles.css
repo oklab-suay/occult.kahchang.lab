@@ -311,3 +311,15 @@ footer {
     margin: 0;
   }
 }
+/* ===== Global background watercolor (all pages) ===== */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: url("../bg-watercolor.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}

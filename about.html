@@ -7,6 +7,81 @@
   <meta name="description" content="オカルトかーちゃんの紹介ページ。理念やプロフィール、活動内容について。">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- ★ aboutページ専用の最小CSS（styles.css追記なしで動く） -->
+  <style>
+    /* ===== About: 3つの挿絵ブロック ===== */
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 18px;
+    }
+
+    .about-block {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .about-block.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .about-copy {
+      flex: 1 1 560px;
+      min-width: 0;
+    }
+
+    .about-illust {
+      flex: 0 0 320px;
+      margin: 0;
+      max-width: 320px;
+    }
+
+.about-illust img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* 正円にするため */
+  object-fit: cover;    /* はみ出しをトリミング */
+  display: block;
+  border-radius: 50%;   /* ← これが丸 */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  opacity: 0.98;
+}
+.about-bottom-illust{
+  margin: 28px auto 0;
+  max-width: 720px;   /* 好みで調整 */
+}
+
+.about-bottom-illust img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px; /* 角丸不要なら削除 */
+}
+
+
+    /* ===== モバイル調整 ===== */
+@media (max-width: 820px) {
+  .about-section {
+    gap: 10px;
+  }
+
+  .about-block {
+    margin-bottom: 0;
+  }
+
+  .lead {
+    margin-bottom: 0.8em;
+  }
+
+
+.about-illust {
+  display: none;
+}
+}
+
+  </style>
 </head>
 
 <body>
@@ -48,80 +123,86 @@
 
 
 
-  <main>
-  <div class="container">
-    <!-- ここに既存のABOUT本文（h1やp等）を全部入れる -->
-  
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-text">
-        <h1 class="about-heading">
-          ABOUT
-        </h1>
-        <p class="lead">
-          はじめまして。オカルトかーちゃんです💛<br>
-<br>
-日常の中で「なんか気になる」「引っかかる」<br>
-そんな感覚を、オカルトかーちゃんの言葉で拾い、形にする活動をしています。
-<br><br>
-もうひとつの顔は、思考整理の相棒です。<br>
-私は答えを決める人ではありません。<br>
-チャネリングで視えたことをできるだけそのままお伝えし、いま何が起きているのか、どこで迷いが生まれているのかを整理していきます。
-<br><br>
-白黒をつけたり、未来を断定したりせず<br>
-「自分で決められる状態」に戻すことを大切にしています。<br>
-<br>
-見えない世界の話と、現実の生活。<br>
-どちらか一方に寄りすぎると、判断は重くなります。<br>
-<br>
-会社員として現実を回しながら、<br>
-感覚の世界にも触れてきたからこそ、<br>
-その間を行き来しながら整理する役割ができるのだと思っています。
-<br><br>
-対話を通して思考がほどけると、<br>
-判断が軽くなって、自然に行動できるようになります。<br>
-私は、「納得して選べる状態」 をつくる人です。
-<br><br>
-現実と感覚、どっちも大事。<br>
-迷いの中にいるときほど、軽く、まっすぐに整えていきましょう。
-<br><br>
-迷ったら、かーちゃんに聞いてみてください<br>
-        </p>
-      </div>
-      <div class="hero-visual">
-        <img src="assets/women.png" alt="かーちゃんのイメージ">
-      </div>
-    </section>
+ <main>
+    <div class="container">
 
-    <!-- 想い -->
-    <!--　<section class="section">
-      <div class="card">
-        <h2>わたしの想い</h2>
-        <p class="lead">
-          神秘的な伝説が残る青森・新郷村で生まれ、幼いころから日々の不思議やご先祖さまの気配を身近に感じて過ごしてきました。<br>
-          深い理屈よりも“神秘的なことっておもしろい”という気持ちに導かれ、2024年に「オカルトかーちゃん」として発信を始めました。<br><br>
-          組織で働く中で一人の力に限界を感じるときも、同じ思いを持つ人が増えれば、できないと思っていたことが少しずつ動き出す——そう信じています。<br>
-          世の中を少しでも生きやすくしたいと願う方のそばで、わたしにできる形で力を添えたい。<br><br>
-          そんなときに出会ったのがチャネリングでした。見えない世界のサインを一緒に受け取り、日常の迷いや不安を気づきへ変える。<br>
-          安心感の中で、自分らしい選択ができるようお手伝いすることが、わたしの役目です。
-        </p>
-      </div>
-    </section>-->
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1 class="about-heading">ABOUT</h1>
 
-    <!-- できること -->
-    <!--<section class="section">
-      <div class="card">
-        <h2>できること</h2>
-        <ul class="list">
-          <li>チャネリングで、その時のテーマに沿ったメッセージを受け取る</li>
-          <li>オラクルカードで多角的な視点をプラス</li>
-          <li>ペンデュラムで具体性を高め、実生活に活かせる言葉としてお伝えする</li>
-          <li>セッション後に振り返りシートをお渡ししています</li>
-        </ul>
-      </div>
-    </section> -->
-</div>
+          <div class="about-section">
+
+            <!-- Block 1 -->
+            <div class="about-block">
+              <div class="about-copy">
+                <p class="lead">
+                  はじめまして。オカルトかーちゃんです💛<br><br>
+
+                  日常の中で「なんか気になる」「どうしても引っかかる」。
+                  そんなふうに、見えない何かに足を止められていませんか？<br><br>
+
+                  現実を頑張らなきゃいけないのに、感覚的な迷いが消えない。<br>
+                  そんなときは、思考が複雑に絡まって、判断が重くなっているサインです。
+                </p>
+              </div>
+
+              <!-- ★ 挿絵1：この画像ファイルを assets/ に置いてください -->
+              <figure class="about-illust">
+                <img src="assets/about-1.png" alt="迷いと違和感のイメージ">
+              </figure>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="about-block reverse">
+              <div class="about-copy">
+                <p class="lead">
+                  私は答えを勝手に決める予言者ではありません。<br>
+                  あなたの思考をほどき、整理する「相棒」です。<br><br>
+
+                  私自身、キリスト伝説など神秘的な伝承が残る青森・新郷村で生まれ、幼い頃から不思議な気配をごく当たり前に感じて育ちました。<br>
+                  一方で、普段は会社員として組織の中で現実を回しています。<br><br>
+
+                  「見えない世界の感覚」と「現実社会のルール」。その両方の板挟みになる苦しさや、バランスの難しさを知っている私だからこそ、あなたにお手伝いできることがあります。
+                </p>
+              </div>
+
+              <!-- ★ 挿絵2 -->
+              <figure class="about-illust">
+                <img src="assets/about-2.png" alt="見えない世界と現実のバランスのイメージ">
+              </figure>
+            </div>
+
+            <!-- Block 3 -->
+            <div class="about-block">
+              <div class="about-copy">
+                <p class="lead">
+                  チャネリングで視えたことをそのままお伝えし、「いま何が起きているのか」「どこで迷っているのか」を一緒に整理しましょう。<br>
+                  対話を通して思考の結び目がほどけると、不思議なくらい判断が軽くなり、自然と足が前に出るようになります。<br><br>
+
+                  白黒つけなくていい。未来を断定されなくていい。<br>
+                  あなたがあなた自身の足で、「納得して選べる状態」を取り戻すために。<br><br>
+
+                  迷ったら、かーちゃんに話してみてください。
+                </p>
+              </div>
+
+              <!-- ★ 挿絵3 -->
+              <figure class="about-illust">
+                <img src="assets/about-3.png" alt="前に進む感覚のイメージ">
+              </figure>
+            </div>
+
+          </div>
+        </div>
+<!-- ★セッション内容 ：この画像ファイルを assets/ に置いてください -->
+        <figure class="about-bottom-illust">
+          <img src="assets/tool.png" alt="セッション内容">
+        </figure>
+      </section>
+    </div>
   </main>
+
 
   <!-- ====== Footer ====== -->
   <footer>
