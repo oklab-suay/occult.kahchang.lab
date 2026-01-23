@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oklab-suay.github.io/occult.kahchang.lab/sitemap.xml
