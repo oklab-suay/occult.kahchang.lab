@@ -219,6 +219,18 @@ h2.serif { font-size: clamp(2rem, 4vw, 3.2rem); }
   to   { opacity: 1; }
 }
 
+.cta-arrow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6px;
+  animation: ctaArrowBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes ctaArrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
 @keyframes lineGrow {
   0%   { transform: scaleY(0); opacity: 0; }
   50%  { transform: scaleY(1); opacity: 1; }
@@ -922,7 +934,15 @@ footer {
   .catch-section { padding: 80px 0 64px; }
   .for-layout { grid-template-columns: 1fr; gap: 20px; }
   .for-label-text { font-size: 1.6rem; }
-  .for-grid { grid-template-columns: 1fr 1fr; }
+  .for-grid { grid-template-columns: 1fr; gap: 0; }
+  .for-item {
+    padding: 20px 0;
+    border: none;
+    border-bottom: 1px solid var(--border2);
+    border-radius: 0;
+    background: none;
+  }
+  .for-item:last-child { border-bottom: none; }
   .menu-label-row { gap: 20px; }
 
   .about-layout { grid-template-columns: 1fr; gap: 40px; }

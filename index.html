@@ -45,10 +45,31 @@
 
   <!-- ====== Hero ====== -->
   <section class="hero-video">
-    <video class="bg-video" autoplay muted loop playsinline preload="metadata">
-      <source src="assets/bannermoba.mp4" type="video/mp4" media="(max-width: 768px)">
+    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline preload="metadata">
       <source src="assets/womenmv.mp4" type="video/mp4">
     </video>
+    <script>
+      (function () {
+        var v = document.getElementById('heroVideo');
+        var mobileSrc = 'assets/bannermoba.mp4';
+        var desktopSrc = 'assets/womenmv.mp4';
+        function absolute(path) {
+          var a = document.createElement('a');
+          a.href = path;
+          return a.href;
+        }
+        function setSrc() {
+          var wanted = window.innerWidth <= 768 ? mobileSrc : desktopSrc;
+          if (v.currentSrc !== absolute(wanted)) {
+            v.src = wanted;
+            v.load();
+            v.play().catch(function () {});
+          }
+        }
+        setSrc();
+        window.addEventListener('resize', setSrc);
+      })();
+    </script>
     <!-- スクロール誘導 -->
     <div class="scroll-hint">
       <span class="scroll-hint-label">Scroll</span>
@@ -165,6 +186,12 @@
         はじめての方も、まずはお気軽にご相談ください。<br>
         セッション内容や日程についてのご質問もお待ちしています。
       </p>
+      <div class="cta-arrow" aria-hidden="true">
+        <svg width="44" height="64" viewBox="0 0 44 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 4C26 20 20 34 14 48" stroke="#f5a623" stroke-width="4" stroke-linecap="round"/>
+          <path d="M2 40C5 44 9 48 14 52C17 48 20 44 24 41" stroke="#f5a623" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
       <div class="btn-row" style="justify-content:center;">
         <a href="https://lin.ee/ttjjf82" target="_blank" rel="noopener" class="btn btn-ghost">公式LINE</a>
       </div>
