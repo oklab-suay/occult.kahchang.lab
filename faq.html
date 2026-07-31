@@ -1,123 +1,148 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ｜オカルトかーちゃん</title>
-  <meta name="description" content="よくあるご質問。">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="description" content="よくあるご質問。セッションの予約方法・内容・キャンセルポリシーなど。">
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
 <body>
- <!-- ★ ここに index.html と同じ Header を貼る ★ -->
-  <header class="site-header">
-    <div class="header-wrap">
 
-      <div class="logo">
-        <a href="index.html">
-          <img src="assets/icon.png" alt="オカルトかーちゃん アイコン">
-          <span>オカルトかーちゃん</span>
-        </a>
+<!-- ====== Header ====== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="../assets/vish.png" alt="オカルトかーちゃん">
+      <span>オカルトかーちゃん</span>
+    </a>
+    <input id="nav-toggle" type="checkbox" class="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="メニューを開く">
+      <img class="hamburger-icon" src="../assets/humberger_Image.png" alt="メニュー">
+    </label>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ====== Page Hero ====== -->
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="page-hero-tag">FAQ</span>
+      <h1 class="page-hero-title">よくあるご質問</h1>
+      
+    </div>
+  </section>
+
+  <!-- ====== FAQ List ====== -->
+  <section class="section" style="padding-top:16px;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-label">Q</span>
+            <span>予約はどのように行えばいいですか？</span>
+          </div>
+          <p class="faq-a"><a href="https://lin.ee/ttjjf82">公式LINE</a>にご登録のうえ、ご予約ください。</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-label">Q</span>
+            <span>支払い方法は？</span>
+          </div>
+          <p class="faq-a">現金・PayPay・銀行振込等</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-label">Q</span>
+            <span>キャンセルはできますか？</span>
+          </div>
+          <p class="faq-a">原則として前日までにご連絡ください。当日キャンセルはご遠慮ください。<br>詳細は<a href="othe.html#henkin">キャンセル・返金について</a>をご確認ください。</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-label">Q</span>
+            <span>占いとは違いますか？</span>
+          </div>
+          <p class="faq-a">はい。未来を断定する占いではなく、「いま必要なヒント」を受け取るためのセッションです。あなた自身が選択・判断することをサポートします。</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-label">Q</span>
+            <span>視れないテーマはありますか？</span>
+          </div>
+          <p class="faq-a">以下のテーマはお受けしておりません。<br>
+          ・ギャンブルや投資の当たり外れ<br>
+          ・医療や法律の判断<br>
+          ・人の生死や試験の合否<br>
+          ・故人との交信、失せ物、行方不明人に関すること</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            <span class="faq-q-label">Q</span>
+            <span>小さい子どもを連れて行っても大丈夫ですか？</span>
+          </div>
+          <p class="faq-a">もちろん大丈夫です。短めのメニューをおすすめする場合がありますが、安心してご参加ください。</p>
+        </div>
+
       </div>
 
-      <input id="nav-toggle" type="checkbox" class="nav-toggle" />
+      <div style="text-align:center; margin-top:60px;">
+        <p style="color:var(--muted); font-size:.9rem; margin-bottom:24px;">他にご不明な点がございましたら、お気軽にどうぞ。</p>
+        <a href="https://lin.ee/ttjjf82" target="_blank" rel="noopener" class="btn btn-primary">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
 
-      <label for="nav-toggle" class="hamburger" aria-label="メニューを開く">
-        <img
-          class="hamburger-icon"
-          src="assets/humberger_Image.png"
-          alt="メニュー"
-        >
-      </label>
+</main>
 
-      <nav class="site-nav" aria-label="メインメニュー">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-<!--<a href="https://form.jotform.com/252691871500457" target="_blank" rel="noopener noreferrer">ご予約</a>-->
-        </ul>
+<!-- ====== Footer ====== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/icon.png" alt="オカルトかーちゃん">
+        <span>オカルトかーちゃん</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
       </nav>
-
+      <div class="footer-social">
+        <a href="https://www.instagram.com/occult.kahchang.lab/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://x.com/occultkahchang?s=21" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.9 6.3L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg>
+        </a>
+      </div>
     </div>
-  </header>
-
-
-  <main>
-<div class="container">
-    <!-- ここに既存のABOUT本文（h1やp等）を全部入れる -->
-
-    <section class="hero">
-      <div class="hero-text">
-        <h1>よくあるご質問</h1>
-       </div>
-    </section>
-
-    <section class="faq">
-      <article class="card">
-
-        <h3>Q. 予約はどのように行えばいいですか？</h3>
-
-
-<p><a href="https://www.instagram.com/occult.kahchang.lab/" style="color:#fff;">インスタ</a>のDM、または、<a href="contact.html" style="color:#fff;">Contact</a>からお問い合わせください。</p>
-
-        <!-- <p>右上の「ご予約」ボタンからフォームへアクセスしてください。<br>
-        ご予約完了までの流れは以下のとおりです。<br>
-        1. メニューと日時を選択して送信<br>
-        2. 自動返信メール受信<br>
-        3. 「お支払いはこちらから」リンクより事前決済<br>
-        4. 入金確認後に予約確定メールをお送りします。</p> -->
-      </article>
-<br>
-      <article class="card">
-        <h3>Q. 支払い方法は？</h3>
-<p>近日中に公開します。検討中...</p>
-        <!-- <p>銀行振込・クレジットカード・キャリア決済・コンビニ／Pay-easy等がご利用いただけます。<br>
-        ご案内する期日までにお支払いください。</p>-->
-      </article>
-<br>
-      <article class="card">
-        <h3>Q. キャンセルはできますか？</h3>
-        <p>原則として前日までにご連絡ください。当日キャンセルはご遠慮ください。<br>
-        <a href="othe.html#henkin" style="color:#fff;">キャンセル・返金について</a>をご確認ください。</p>
-      </article>
-<br>
-      <article class="card">
-        <h3>Q. 占いとは違いますか？</h3>
-        <p>はい。未来を断定する占いではなく、「いま必要なヒント」を受け取るためのセッションです。</p>
-      </article>
-<br>
-      <article class="card">
-        <h3>Q. 視れないテーマはありますか？</h3>
-        <p>以下のテーマはお受けしておりません。<br>
-        ・ギャンブルや投資の当たり外れ<br>
-        ・医療や法律の判断<br>
-        ・人の生死や試験の合否<br>
-        ・故人との交信、失せ物、行方不明人に関すること</p>
-      </article>
-<br>
-      <article class="card">
-        <h3>Q. 小さい子どもを連れて行っても大丈夫ですか？</h3>
-        <p>もちろん大丈夫です。短めのメニューをおすすめする場合がありますが、安心してご参加ください。</p>
-      </article>
-<br>
-    </section>
-</div>
-  </main>
-
-  <footer>
-    <div class="footwrap">
-      <a href="index.html">Home</a>
-      <span><a href="about.html">About</a></span>
-      <span><a href="menu.html">Menu</a></span>
-      <span><a href="contact.html">Contact</a></span>
-      <span><a href="othe.html#policy">Privacy Policy & Terms Of Use</a></span>
-      <span><a href="othe.html#tokutei">特定商取引法に基づく表記</a></span>
-      <span>© 2025 Copyrights by オカルトかーちゃんラボ All Rights Reserved.</span>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="othe.html#policy">Privacy Policy &amp; Terms</a>
+        <a href="othe.html#tokutei">特定商取引法に基づく表記</a>
+      </div>
+      <p class="footer-copy">© 2025 オカルトかーちゃんラボ All Rights Reserved.</p>
     </div>
-  </footer>
+  </div>
+</footer>
+
 </body>
 </html>
