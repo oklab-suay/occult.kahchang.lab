@@ -1,0 +1,325 @@
+/* =========================
+   基本トークン
+========================= */
+:root {
+  --bg: #0c1020;
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+  --navy: rgba(10, 15, 45, 0.7);
+  --border: rgba(255, 255, 255, 0.14);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.30);
+
+  --radius: 18px;
+  --pad: 18px;
+  --maxw: 1080px;
+
+  --accent: #ffd46b;
+  --accent2: #ff8fb1;
+}
+
+/* =========================
+   リセット
+========================= */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+/* =========================
+   背景（水彩）
+========================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../bg-watercolor.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* =========================
+   レイアウト
+========================= */
+.container {
+  width: min(var(--maxw), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  margin: 0 0 16px;
+  letter-spacing: 0.04em;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+.site-header {
+  backdrop-filter: blur(12px);
+  background: rgba(10, 14, 30, 0.55);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-wrap {
+  width: min(var(--maxw), calc(100% - 32px));
+  margin: 0 auto;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* ロゴ（アイコン＋文字） */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 72px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+
+  /* 緑の額縁感 */
+  border: 2px solid rgba(140, 200, 160, 0.85);
+  box-shadow:
+    0 0 0 3px rgba(140, 200, 160, 0.25),
+    0 4px 12px rgba(0, 0, 0, 0.35);
+
+  background-color: #000;
+}
+
+/* PC（デスクトップ）では通常ナビを表示 */
+.site-nav ul {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-nav a:hover { color: var(--text); }
+
+/* チェックボックス（表示しない） */
+.nav-toggle { display: none; }
+
+/* =========================
+   ハンバーガー（画像版）
+   - 右上のボタン当たり判定は残しつつ
+   - 見た目は「丸＋緑ぼんやり」に寄せる
+========================= */
+
+/* ハンバーガー（デフォルトは非表示：モバイルで表示） */
+.hamburger {
+  display: none;
+
+  /* ▼サイズ調整はここ（当たり判定） */
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+
+  /* 丸いタップ領域 */
+  border-radius: 999px;
+}
+
+/* 画像ハンバーガー（見た目） */
+.hamburger-icon {
+  /* ▼サイズ調整はここ（見た目の画像サイズ） */
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;      /* 画像を丸く */
+  object-fit: cover;       /* 円に収めた時のトリミング */
+  display: block;
+  background-color: #000;  /* 透過PNG対策 */
+
+  /* ▼緑のぼんやり加工（左アイコン寄せ） */
+  border: 2px solid rgba(140, 200, 160, 0.85);
+  box-shadow:
+    0 0 0 3px rgba(140, 200, 160, 0.20),
+    0 0 14px rgba(140, 200, 160, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* span方式は使わない（残っていても非表示） */
+.hamburger span { display: none; }
+
+
+/* =========================
+   ボタン
+========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, rgba(255, 212, 107, 0.95), rgba(255, 143, 177, 0.90));
+  color: #141627;
+  border-color: rgba(255,255,255,0.18);
+}
+
+.btn.ghost {
+  background: rgba(10, 15, 45, 0.45);
+  color: var(--text);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================
+   コンテンツ
+========================= */
+.cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: rgba(10, 15, 45, 0.42);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  box-shadow: var(--shadow);
+}
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* =========================
+   フッター
+========================= */
+footer {
+  border-top: 1px solid var(--border);
+  background: rgba(10, 14, 30, 0.55);
+  padding: 22px 0;
+}
+.footwrap {
+  width: min(var(--maxw), calc(100% - 32px));
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.footwrap a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.footwrap a:hover { color: var(--text); }
+
+/* =========================
+   レスポンシブ
+========================= */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* ===== モバイル：メニュー被り対策（完全版） ===== */
+@media (max-width: 768px) {
+  /* ハンバーガーを表示 */
+  .hamburger {
+    display: inline-flex;
+  }
+
+  /* PC用の横並びナビは隠す（完全に消す） */
+  .site-nav {
+    display: none;
+    position: fixed;
+    top: 72px;               /* ヘッダー下から表示 */
+    left: 0;
+    right: 0;
+    background: rgba(10, 14, 30, 0.95);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+    z-index: 1200;
+  }
+
+  /* チェックされたら表示 */
+  .nav-toggle:checked ~ .site-nav {
+    display: block;
+  }
+
+  /* 縦並び */
+  .site-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+/* ===== Global background watercolor (all pages) ===== */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: url("../bg-watercolor.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
